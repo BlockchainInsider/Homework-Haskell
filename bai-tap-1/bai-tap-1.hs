@@ -28,4 +28,4 @@ cylinderVolume h r = h*circleArea r
 -- Question 5
 -- Define a function that takes the height and radius of a cylinder and checks if the volume is greater than or equal to 42.
 
-greater42 h r = cylinderVolume h r > 42
+greater42 h r = cylinderVolume h r >= 42
