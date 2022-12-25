@@ -42,9 +42,10 @@ circleArea a b =
 
 division :: Double -> Double -> String
 division a b 
-  | a > b      = "Invalid input"
-  | b == 0     = "You can't divide by 0"
-  | otherwise  = "The result is: " ++ show (a/b)
+  | a < 0 && b < 0   = if (a < b) then show (b/a) else show (a/b)
+  | a < 0 || b < 0   = "We don't work with minor number"
+  | a /= 0 && b /= 0 = if a > b then show(b/a) else show(a/b)
+  | otherwise        = "The answer is 0"
 
 -- Question 5
 -- Write a function that takes in two numbers and calculates the sum of squares for the product and quotient
@@ -53,7 +54,7 @@ division a b
 
 sumOfSquare :: Double -> Double -> Double
 sumOfSquare a b =
-  let prod   = a*b
-      divi   = a/b
-  in square prod + square divi
-    where square = (^2)
+  let prod   = ab*ab where ab = a*b
+  in prod + divi
+    where divi = let diviab = a/b
+                 in  diviab*diviab
