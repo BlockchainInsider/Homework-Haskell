@@ -42,7 +42,7 @@ circleArea a b =
 
 division :: Double -> Double -> String
 division a b 
-  | a < 0 && b < 0   = if (a < b) then show (b/a) else show (a/b)
+  | a < 0 && b < 0   = if (a < b) then show (a/b) else show (b/a)
   | a < 0 || b < 0   = "We don't work with minor number"
   | a /= 0 && b /= 0 = if a > b then show(b/a) else show(a/b)
   | otherwise        = "The answer is 0"
